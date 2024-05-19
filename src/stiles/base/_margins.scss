@@ -1,0 +1,26 @@
+.DF-CR{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include tablet{
+        justify-content: end
+    }
+}
+@mixin Margin-Flex(
+    $tamañoo,
+    $direccion,
+    $Mtamañoo,
+    $Mdireccion
+    ) {
+    $tamaño: $tamañoo;
+    
+    display: flex;
+    flex-direction: $direccion;
+    justify-content: $justify;
+    @media (min-width:#{$tamaño}) {
+        display: flex;
+        flex-direction: $Mdireccion;
+        justify-content: $Mjustify;
+        @content;
+    }
+}

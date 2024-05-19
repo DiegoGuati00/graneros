@@ -1,0 +1,11 @@
+version: "2"
+services:
+  node:
+    build: .
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/usr/src
+    ports:
+      - 3000:3000
+    command: "npm run dev"

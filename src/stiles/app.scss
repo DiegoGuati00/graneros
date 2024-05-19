@@ -1,0 +1,15 @@
+@import 'base/normalize';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/globales';
+@import 'base/utilidades';
+@import 'base/botones';
+@import 'base/textos';
+/** UI **/
+// @import 'layout/page/Menu-page.scss';
+@import 'layout/page/Productos.scss';
+/** Componets **/
+// @import 'layout/comp/menu-comp.scss';
+@import 'layout/comp/index.scss';
+@import 'layout/comp/footerPage-comp.scss';
+@import 'layout/comp/menu-comp.scss';

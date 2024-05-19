@@ -1,0 +1,65 @@
+// custom
+.TX-C_L{
+    text-align: center;
+    @include desktop{
+        text-align: left;
+    }
+}
+.TX-C_R{
+    text-align: center;
+    @include desktop{
+        text-align: right;
+    }
+}
+.TX-C_J{
+    text-align: center;
+    @include desktop{
+        text-align: justify;
+    }
+}
+.TX-C{
+    text-align: center !important;
+}
+.TX-L{
+    text-align: left !important;
+}
+.TX-J{
+    text-align: justify !important;
+}
+.TX-MT{
+    min-width: max-content;
+}
+.TX-MT-null{
+    @include desktop{
+        min-width: max-content;
+    }
+}
+.TXT-S-p{
+    font-size: 1.4vw;
+}
+.TXT-Wei-SB{
+    font-weight: 600;
+}
+.TXT-Wei-none{
+    font-weight: 200;
+}
+// universal
+.Mapa-H2{
+    font-weight: 300;
+}
+
+.TXT-subra-white{
+    font-weight: 900;
+    color: white;
+}
+.TXT-subra-verde{
+    font-weight: 900;
+    color: $verde !important;
+}
+.TXT-subra-azul{
+    font-weight: 900;
+    color: $azuloscuro !important;
+}
+.TXT-COLOR-BLUE{
+    color: $azuloscuro;
+}
