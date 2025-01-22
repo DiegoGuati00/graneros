@@ -1,7 +1,7 @@
 import './app.css'
 import './stiles/app.scss'
-import { Suspense, useEffect, useState } from 'react'
-import { Outlet, Route, Routes } from 'react-router-dom'
+import { Suspense, useContext, useEffect, useState } from 'react'
+import { Outlet, Route, Routes, useLocation } from 'react-router-dom'
 import textos from './text/app'
 import dash from './text/dash'
 import useApiContents from './Api-Contents/contex/hooks/useApiContents';
@@ -11,6 +11,8 @@ import FooterPage from './componentes/layout/FooterPage';
 import ReactGA from 'react-ga';
 import usePaginate from './hook/usePaginate'
 import Graneros from './indexDB/Graneros'
+import AuthContex from './contex/AuthContex'
+import MenuAdmin from './componentes/layout/MenuAdmin'
 const TRACKING_ID = import.meta.env.VITE_TRACKING_ID; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
@@ -25,7 +27,7 @@ function App() {
   const almacen = new Graneros();
   // const {pagesAll,error,nexpage} = usePaginate("http://localhost/aplicacion/12");
 
-  console.log(config);
+  // console.log(config);
   // // const hola = JSON.stringify(config) ;
   // // console.log(hola);
   // // console.log(config.tree ? config.tree.tree : []);
@@ -94,35 +96,35 @@ export function Public({menu=[],footer={}}) {
   )
 }
 export function Private({menu=[],footer={}}) {
+  const {authAdmin, setAuthAdmin} = useContext(AuthContex);
+  const almacen = new Graneros();
+  const locacion = useLocation();
   useEffect(() => {
-    let co = sessionStorage.getItem("session");
-    // let List = {}
-    // if(co.length){
-    //     co.map((a)=>{
-    //         let o = a.split("=")
-    //         if(o.length == 2){
-    //             List[o[0].trim()] = o[1]
-    //         }
-    //     })
-    // }
-    console.log(co);
-    if(!co){
-        window.location.replace("/login")
+    let co = document.cookie;
+    let ListCo=co.split(";");
+    let cookiesLogin = {}
+    ListCo.map(c=>{
+        let a = c.replace(" ", "");
+        
+        a = a.split("=")
+        cookiesLogin[a[0]] = a[1]?a[1]:a[0];
+    })
+    if(cookiesLogin.admin_access_token){
+        almacen.get("usuarios",(a)=>{
+            setAuthAdmin(a)
+            // window.location.replace("/dashboard")
+        },parseInt(cookiesLogin.admin_access_token))
+        console.log(cookiesLogin)
+    }else{
+      if(locacion.pathname != "/dashboard/loginAdmin"){
+        // window.location.replace("/dashboard/loginAdmin")
+      }
     }
-    // if(!List["session"]){
-    //   // console.log(List["session"])
-    // }
-    // if(List["session"]){
-    //   // if()
-    //   console.log(List["session"])
-    //   // window.location.replace("/login")
-    // }
-    // console.log(!List["session"])
-}, []);
+},[]);
   return (
     <>
     <Suspense fallback={<Cargando/>}>
-      <MenuComp menu={menu}/>
+      <MenuAdmin menu={menu}/>
       <Outlet/>
       <FooterPage config={footer}/>
     </Suspense>

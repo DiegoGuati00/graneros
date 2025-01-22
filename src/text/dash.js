@@ -3,6 +3,9 @@ import logout from "./logout";
 import home from "./home";
 import proveedor from "./proveedor";
 import dashProductos from "./dashProductos";
+import dashboard from "./dashboard";
+import LoginAdmin from "./loginAdmin";
+import registroAdmin from "./registroAdmin";
 
 // import AprovechamientoYvalorizacion from './aprovechamientoYvalorizacion';
 const app = {
@@ -28,10 +31,12 @@ const app = {
 
     
     pages:[
-        home,
-        logout,
-        clientes,
-        proveedor,
+        dashboard,
+        LoginAdmin,
+        registroAdmin,
+        // logout,
+        // clientes,
+        // proveedor,
         dashProductos
     ]
 

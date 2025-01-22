@@ -17,6 +17,7 @@ const FormUsuario = () => {
         e.preventDefault();
         const usuarios = almacen.new("usuarios",data);
         window.location.reload();
+        window.location.replace("/");
     }
 
     return (
@@ -24,7 +25,7 @@ const FormUsuario = () => {
             <div className="divprin">
                 <div className="PRIN1">
                     <form onSubmit={seend}>
-                        <h1>Registro Usuario</h1>
+                        <h1>Usuario Admin</h1>
                         <label htmlFor="nombreC">NOMBRE</label>
                         <input type="text"  onChange={(e)=>changeData(e.target.value,"usuario")} id="nombreC" placeholder="INGRESE USUARIO" />
 

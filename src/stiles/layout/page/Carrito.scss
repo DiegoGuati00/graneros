@@ -1,0 +1,70 @@
+#Carrito{
+    @include responsi(700px){
+        display: flex;
+        justify-content: center;
+        margin: 14rem 0;
+    }
+    .Producto{
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+        border-radius: 10px;
+        background: white;
+        padding: 0.5rem 1rem;
+        .P-img{
+            width: 100px;
+            min-width: 100px;
+            height: 100px;
+        }
+        .P-info{
+            margin: 0 1rem;
+            padding: 1rem 0;
+        }
+        .info-title{
+            p{
+                font-size: 14px;
+            }
+        }
+        .info-btns{
+            display: flex;
+            button{
+                padding: 3px 5px;
+                font-size: 13px;
+                margin: .5rem;
+                width: max-content;
+            }
+        }
+        .info-cantidad{
+            input{
+                width: 70px;
+            }
+        }
+        .info-price{
+            p{
+                font-size: 20px;
+            }
+        }
+    }
+    .Detalles{
+        background: white;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        @include responsi(700px){
+            height: 100px;
+        }
+        .D-C1{
+            border-bottom: dashed black;
+            padding: 1rem;
+            font-weight: 800;
+        }
+        .D-C2{
+            margin: 1rem;
+            display: flex;
+        }
+        .D-C3{
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

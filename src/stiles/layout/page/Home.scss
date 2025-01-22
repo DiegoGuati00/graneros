@@ -1,0 +1,38 @@
+#Home{
+    .Slider-Producto{
+        display: flex;
+        justify-content: center;
+    }
+    .slider-producto{
+        width: 280px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        height: 300px;
+        .C-img{
+            height: 150px;
+        }
+        .C-title{
+            height: 70px;
+            display: flex;
+            p{
+                text-align: center;
+            }
+        }
+    }
+    .view-S{
+        padding: 1rem;
+        background: white;
+        margin: 1rem;
+        border-radius: 10px;
+    }
+    .view-P{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .slider-producto{
+            margin: 1rem;
+        }
+    }
+
+}

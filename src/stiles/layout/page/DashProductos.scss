@@ -1,0 +1,17 @@
+#DashProductos{
+    .C-imagenes{
+        display: flex;
+        flex-wrap: wrap;
+        .imagenes-C1{
+            min-width: 100px;
+            max-width: 100px;
+            margin: 2rem 1rem;
+            p{
+                background: red;
+                width: fit-content;
+                padding: 5px;
+                border-radius: 15px;
+            }
+        }
+    }
+}

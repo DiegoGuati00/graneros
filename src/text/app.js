@@ -1,6 +1,12 @@
 import home from "./home";
+import registroAdmin from "./registroAdmin";
+import registroUsuario from "./registroUsuario";
 import login from "./login";
 import productos from "./productos";
+import producto from "./producto";
+import carrito from "./carrito";
+import comprar from "./comprar";
+import compras from "./compras";
 
 // import AprovechamientoYvalorizacion from './aprovechamientoYvalorizacion';
 const app = {
@@ -14,6 +20,7 @@ const app = {
     tree:{
         tree:   [
             [["home","/"]],
+            [["registro","/registroAdmin"]],
             [["productos","/productos"]],
             [["login","/login"]],
         ],
@@ -31,8 +38,12 @@ const app = {
     
     pages:[
         home,
-        productos,
-        login
+        registroUsuario,
+        login,
+        producto,
+        carrito,
+        comprar,
+        compras
     ]
 
 

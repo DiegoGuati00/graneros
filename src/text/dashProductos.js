@@ -1,6 +1,6 @@
 const dashProductos = {
     id:{
-        url:'dashProductos',
+        url:'producto/:productoID?',
         component:'margen-page'
     },
     html:[

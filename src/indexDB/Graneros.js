@@ -3,10 +3,9 @@ import DB from"./DB.js";
 class Graneros extends DB{
     constructor(){
         super("graneros",[
-            "clientes",
-            "proveedores",
-            "productos",
-            "categorias",
+            "carrito",
+            "compra",
+            "favoritos",
             "usuarios"
         ]);
         // this.setDBs("graneros");

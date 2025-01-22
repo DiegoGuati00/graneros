@@ -145,7 +145,7 @@ class DB {
         }
     }
 
-    new(db=null,val={}){
+    new(db=null,val={},f=null){
         if(!db){return;}
         let DB = indexedDB.open(this.dbName,1);
         
@@ -165,6 +165,10 @@ class DB {
             let request = books.add(book); // (3)
     
             request.onsuccess = function() { // (4)
+                if(f){
+                    f(request.result);
+
+                }
                 return request.result;
                 console.log("Libro agregado al almacén", request.result);
             };

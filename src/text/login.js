@@ -4,7 +4,7 @@ const login = {
         component:'margen-page'
     },
     html:[
-        'FormLogin',
+        'LoginPage',
     ],
     data:{
     }

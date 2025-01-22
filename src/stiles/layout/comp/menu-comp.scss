@@ -1,4 +1,4 @@
-#menu-public{
+#menu-comp{
     // background: red;
     // height: 17vw;
     // @include telefono{
@@ -13,14 +13,23 @@
     .MenuP-menu{
                     // // background: linear-gradient(180deg, rgba(255,255,255,1) 59%, rgba(255,255,255,0.9514399509803921) 74%, rgba(255,255,255,0.9598433123249299) 88%);
                     // background: linear-gradient(180deg, rgba(255,255,255,1) 59%, rgba(255,255,255,0.8926164215686274) 74%, rgba(255,255,255,0.774969362745098) 88%, rgba(255,255,255,0.7441570378151261) 100%);
+        background: white; // menu no top
+        width: 100%;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+
+    }
+    .MenuP-P{
         // background: white; // menu no top
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         padding: 1rem 2rem;
-        position: fixed;
-        z-index: 10;
+        // position: fixed;
+        // z-index: 10;
         top: 0;
         left: 0;
         @include desktop{
@@ -32,11 +41,46 @@
             left: auto;
         }
     }
+    .MenuP-S{
+        border-top: dashed black;
+        .C1{
+            display: flex;
+            align-items: center;
+            margin: .1rem 2rem;
+        }
+        .M-btn{
+            display: flex;
+            padding: .5rem;
+            max-width: fit-content;
+            align-items: center;
+            cursor: pointer;
+            p{
+                padding: .3rem;
+            }
+        }
+        .M-profile{
+            display: flex;
+            align-items: center;
+            p{
+                margin: 1rem;
+                max-width: 60px;
+                overflow: hidden;
+            }
+            img{
+                width: 30px;
+                height: 30px;
+                border-radius: 100px;
+            }
+        }
+        svg{
+            color: $verde;
+        }
+    }
     .MenuP-logo{
         flex: 0 0 calc(40%);
         margin-left: 1rem;
         @include tablet{
-            max-width: 10vw;
+            max-width: 20%;
         }
         @include desktop{
             margin-left: 3rem;
@@ -45,144 +89,63 @@
             margin: 0;
         }
     }
-    .MenuP-hamburguesa{
-        height: 100%;
-        width: 7%;
-        color: $verde;
-        @include desktop{
-            display: none;
-        }
-    }
-    .MenuP-nav{
-        max-height: 80vh;
-        overflow: overlay;
-        position: absolute;
-        padding: 0 2rem;
-        width: 100%;
-        top: 100%;
-        left: 0;
-        background: rgb(252, 252, 252,1);
-        @include desktop{
-            background: none;
-            position: initial;
-            justify-content: flex-end;
-        }
-    }
-    .MenuP-BtnNav{
+    .MenuP-iconos{
         display: flex;
-        padding: 1rem;
-        margin: 1rem;
-        border-radius: .3rem;
+        min-width: 20%;
         justify-content: center;
-        align-items: center;
-        p{
-            color: $verdeoscuro;
-            font-weight: 600;
-            margin: .1rem 1rem;
-
-        }
-        &:hover{
-            background: $verdeoscuro;
-            p{
-                // color: rgb(211, 92, 207);
-                color: white;
-            }
-        }
-        @include desktop{
-            margin: 0 .5rem;
-            // max-height: 2.5rem;
-            padding: .5rem;
-        }
-    }
-    .selec-MenuP-BtnNav{
-        background: $verdeoscuro;
-            p{
-                color: white;
-            }
-    }
-    .MenuP-icoBtn{
-        min-width: 1vw;
-        max-width: 2rem;
-        padding: .5rem;
-        flex: 0 0 calc(10%);
-        @include desktop{
-            padding: 0;
-            width: 1rem;
-            height: 100%;
-            margin-left: .5rem;
-        }
-    }
-
-    .MenuP-subBtnNav{
-        display: flex;
-        text-align: center;
-        // height: 20vw;
-        max-height: 5rem;
-        padding: 1rem;
-        margin: 1rem;
-        border-radius: .3rem;
-        p{
-            color: $verdeoscuro;
-            font-weight: 500;
-        }
-        &:hover{
-            background: $verde;
-            p{
-                color: white;
-            }
-        }
-        @include desktop{
-            margin: 0 .5rem;
-            // max-height: 2.5rem;
-            padding: .5rem;
-        }
-    }
-    .MenuP-subContentBtnNav{
-        hr{
+        svg{
             color: $verde;
-            @include desktop{
-                margin: .1rem 0;
-            }
-        }
-        @include desktop{
-            background: rgb(252, 252, 252,.9);
+            margin: 0 1rem;
         }
     }
-    .MenuP-BtnNavContenedor{
-        p{
-            min-width: max-content;
-            @include desktop{
-                font-size: 1.05vw;
-            }
-            @include responsi(1500px){
-            }
+    .MenuP-buscador{
+        display: flex;
+        width: 50%;
+        .C1{
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 15px;
+            margin: 5px 0;
+            border-top: 1px solid $verde;
+            border-left: 1px solid $verde;
+            border-bottom: 1px solid $verde;
+            border-right: none;
         }
-    }
-    .MenuP-esconde{
-        display: none;
-        @include desktop{
+        .C2{
+            width: 20%;
+            max-width: 50px;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px 0;
+            border-top: 1px solid $verde;
+            border-left: none;
+            border-bottom: 1px solid $verde;
+            border-right: 1px solid $verde;
+            background: $background-page;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
         }
-    }
-
-    .MenuP-Content{
-        @include desktop{
-            display: flex;
-            justify-content: flex-end;
-        }
-    }
-    .MenuP-MenuHidden{
-        display: none;
-    }
-    .MenuP-MenuVisible{
-        @include desktop{
+        .C3{
             position: absolute;
+            width: 45%;
+            margin: 4rem 0;
         }
-    }
-    .MenuP-MenuNoVisible{
-        visibility: hidden;
-        @include desktop{
-            display: none;
+        .C3-1{
+            width: 100%;
+            background: white;
+            position: relative;
+            top: 0px;
+            max-height: 150px;
+            overflow: auto;
+        }
+        .C3-2{
+            padding: 1rem;
+        }
+        svg{
+            color: $verde;
+            // margin: 0 1rem;
         }
     }
 }
